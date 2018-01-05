@@ -17,6 +17,6 @@ The Fine Print
 --------------
 Please use whatever technology and techniques you feel are applicable to solve the problem. We suggest that you approach this exercise as if this code was part of a larger system. The end result should be representative of your abilities and style.
 
-Please fork this repository. When you have completed your solution, please issue a pull request to notify us that you are ready.
+Please fork this repository. If your solution involves code auto geneated by a development  tool, please commit it separtely from your own work.  When you have completed your solution, please issue a pull request to notify us that you are ready.
 
 Have fun.
