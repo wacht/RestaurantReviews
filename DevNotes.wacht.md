@@ -16,7 +16,8 @@ Starting assumptions
 
 More assumptions
 - CityId: there's half a dozen ways to paramatarize a city (zip code, name, name+state, geolocation, neighborhood). For simplicity, I went with an internal CityId... which likely isn't the optimal solution
-  
+- Ids as ints, not always realistic, but easiest for sample code
+- 
   
 
 ### Issues
@@ -29,15 +30,15 @@ Do they expect a database behind this? It wouldn't be that involved, but I legit
 - [x] Create new VS project
 - [x] Add Swagger
 - [x] Create Restaurant Contoller
-  - [] GetRestaurantsByCity
-  - [] AddRestaurant
+  - [x] GetRestaurantsByCity
+  - [x] AddRestaurant
 - [] Create Review Controller
   - [] AddReview
   - [] GetReviewsByUser
   - [] DeleteReview
 - [x] Create Restaurant Service / Model / Tests
-  - [] GetRestaurantsByCity
-  - [] AddRestaurant
+  - [x] GetRestaurantsByCity
+  - [x] AddRestaurant
 - [] Create Review Service / Model / Tests
   - [] AddReview
   - [] GetReviewsByUser

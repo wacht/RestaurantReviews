@@ -1,7 +1,5 @@
-﻿using System;
+﻿using ApiSample.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApiSample.Restaurant
 {
@@ -9,6 +7,6 @@ namespace ApiSample.Restaurant
     {
         IEnumerable<RestaurantModel> GetRestaurantsByCity(int cityId);
 
-        RestaurantModel AddRestaurant(CreateRestaurantModel restaurant);
+        int AddRestaurant(CreateRestaurantModel restaurant);
     }
 }

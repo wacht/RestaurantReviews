@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiSample.Common;
 using Microsoft.Extensions.Logging;
 
 namespace ApiSample.Restaurant
@@ -17,13 +18,24 @@ namespace ApiSample.Restaurant
 
         public IEnumerable<RestaurantModel> GetRestaurantsByCity(int cityId)
         {
-            return null;
+            return _dataAccess.GetRestaurantsByCity(cityId);
         }
 
-        //assumption: we would expect user information as well
-        public RestaurantModel AddRestaurant(CreateRestaurantModel restaurant)
+        
+        public SaveResponse AddRestaurant(CreateRestaurantModel restaurant)
         {
-            return null;
+            //assumption: we would expect user information as well, and would record who was creating the object
+            var response = new SaveResponse();
+            try
+            {
+                response.Id = _dataAccess.AddRestaurant(restaurant);                
+            }
+            catch
+            {
+                // assumption: exceptions would be logged, and handled gracefully vs thrown
+                response.ErrorMessage = "Unable to add Restaurant";                
+            }       
+            return response;     
         }
         
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiSample.Common;
 using ApiSample.Restaurant;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,14 +37,19 @@ namespace ApiSample.Controllers
         //             a large app would almost certainly have an attribute to handle it, but it can also be done in the method
         [HttpPut]
         [Route("restaurant/add")]
-        //[Permission("AddRestaurant")]
-        public RestaurantModel AddRestaurant([FromBody] CreateRestaurantModel restaurant)
+        public SaveResponse AddRestaurant([FromBody] CreateRestaurantModel restaurant)
         {
-            if (!ValidateRestaurant(restaurant)) 
-                return null; //todo:  log error, return error message
+            if (!ValidateRestaurant(restaurant))
+            {
+                _logger.LogWarning("Invalid restaurant model");
+                return new SaveResponse { ErrorMessage = "Unable to add Restaurant: Invalid model." };
+            } 
 
-            if (!User.IsInRole("AddRestaurant"))
-                return null; //todo:  log error, return unauthorized
+            /*if (!User.IsInRole("AddRestaurant"))
+            {
+                _logger.LogWarning("Unauthorized access attempt");
+                return new SaveResponse { ErrorMessage = "You are not authorized to add restautants" };
+            }*/               
 
             var service = new RestaurantService(new RestaurantDataAccess());
             
