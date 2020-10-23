@@ -13,6 +13,10 @@ Starting assumptions
   - This means that posts won't actually record data...
 - Assume authenticated user
 - Log to default logger
+
+More assumptions
+- CityId: there's half a dozen ways to paramatarize a city (zip code, name, name+state, geolocation, neighborhood). For simplicity, I went with an internal CityId... which likely isn't the optimal solution
+  
   
 
 ### Issues
@@ -23,15 +27,15 @@ Do they expect a database behind this? It wouldn't be that involved, but I legit
 
 ### ToDo
 - [x] Create new VS project
-- [] Add Swagger
-- [] Create Restaurant Contoller
+- [x] Add Swagger
+- [x] Create Restaurant Contoller
   - [] GetRestaurantsByCity
   - [] AddRestaurant
 - [] Create Review Controller
   - [] AddReview
   - [] GetReviewsByUser
   - [] DeleteReview
-- [] Create Restaurant Service / Model / Tests
+- [x] Create Restaurant Service / Model / Tests
   - [] GetRestaurantsByCity
   - [] AddRestaurant
 - [] Create Review Service / Model / Tests
